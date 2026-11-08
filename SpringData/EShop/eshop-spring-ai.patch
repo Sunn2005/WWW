@@ -1,0 +1,296 @@
+diff --git a/pom.xml b/pom.xml
+index 0060ffc..6304999 100644
+--- a/pom.xml
++++ b/pom.xml
+@@ -31,3 +31,19 @@
+     </properties>
++    <dependencyManagement>
++        <dependencies>
++            <dependency>
++                <groupId>org.springframework.ai</groupId>
++                <artifactId>spring-ai-bom</artifactId>
++                <version>2.0.1</version>
++                <type>pom</type>
++                <scope>import</scope>
++            </dependency>
++        </dependencies>
++    </dependencyManagement>
++
+     <dependencies>
++        <dependency>
++            <groupId>org.springframework.ai</groupId>
++            <artifactId>spring-ai-starter-model-openai</artifactId>
++        </dependency>
+         <dependency>
+diff --git a/src/main/java/com/example/eshop/ai/AiChatConfig.java b/src/main/java/com/example/eshop/ai/AiChatConfig.java
+new file mode 100644
+index 0000000..0760d7c
+--- /dev/null
++++ b/src/main/java/com/example/eshop/ai/AiChatConfig.java
+@@ -0,0 +1,38 @@
++package com.example.eshop.ai;
++
++import org.springframework.ai.chat.client.ChatClient;
++import org.springframework.ai.chat.client.advisor.MessageChatMemoryAdvisor;
++import org.springframework.ai.chat.memory.ChatMemory;
++import org.springframework.ai.chat.memory.InMemoryChatMemory;
++import org.springframework.ai.chat.model.ChatModel;
++import org.springframework.context.annotation.Bean;
++import org.springframework.context.annotation.Configuration;
++
++@Configuration
++public class AiChatConfig {
++
++    private static final String SYSTEM_PROMPT = """
++            Bạn là trợ lý tư vấn của eShop, cửa hàng đồ điện tử.
++            Trả lời bằng tiếng Việt, ngắn gọn, thân thiện.
++            Giá, tồn kho và trạng thái đơn hàng PHẢI lấy từ tool, không được bịa.
++            Nếu hết hàng thì nói rõ là hết hàng, đừng gợi ý mua món đó nữa.
++            Chỉ trả lời về sản phẩm, đơn hàng và chính sách của eShop.
++            Chính sách demo: giao hàng 1-3 ngày, phí 30.000đ, miễn phí cho đơn từ 500.000đ;
++            đổi trả trong 7 ngày nếu lỗi do nhà sản xuất; thanh toán COD hoặc chuyển khoản.
++            Khi giới thiệu sản phẩm, luôn kèm link /products/{id}.
++            """;
++
++    @Bean
++    public ChatMemory chatMemory() {
++        return new InMemoryChatMemory();
++    }
++
++    @Bean
++    public ChatClient chatClient(ChatModel chatModel, ChatMemory chatMemory, EShopTools tools) {
++        return ChatClient.builder(chatModel)
++                .defaultSystem(SYSTEM_PROMPT)
++                .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build())
++                .defaultTools(tools)
++                .build();
++    }
++}
+diff --git a/src/main/java/com/example/eshop/ai/AiChatController.java b/src/main/java/com/example/eshop/ai/AiChatController.java
+new file mode 100644
+index 0000000..1144009
+--- /dev/null
++++ b/src/main/java/com/example/eshop/ai/AiChatController.java
+@@ -0,0 +1,28 @@
++package com.example.eshop.ai;
++
++import lombok.RequiredArgsConstructor;
++import org.springframework.web.bind.annotation.PostMapping;
++import org.springframework.web.bind.annotation.RequestBody;
++import org.springframework.web.bind.annotation.RequestMapping;
++import org.springframework.web.bind.annotation.RestController;
++
++import java.util.UUID;
++
++@RestController
++@RequestMapping("/api/ai")
++@RequiredArgsConstructor
++public class AiChatController {
++
++    private final AiChatService aiChatService;
++
++    public record AiChatRequest(String message, String conversationId) {}
++    public record AiChatResponse(String reply, String conversationId) {}
++
++    @PostMapping("/chat")
++    public AiChatResponse chat(@RequestBody AiChatRequest req) {
++        String conversationId = req.conversationId() != null && !req.conversationId().isBlank()
++                ? req.conversationId() : UUID.randomUUID().toString();
++        String reply = aiChatService.chat(conversationId, req.message());
++        return new AiChatResponse(reply, conversationId);
++    }
++}
+diff --git a/src/main/java/com/example/eshop/ai/AiChatService.java b/src/main/java/com/example/eshop/ai/AiChatService.java
+new file mode 100644
+index 0000000..5361e6e
+--- /dev/null
++++ b/src/main/java/com/example/eshop/ai/AiChatService.java
+@@ -0,0 +1,25 @@
++package com.example.eshop.ai;
++
++import lombok.RequiredArgsConstructor;
++import org.springframework.ai.chat.client.ChatClient;
++import org.springframework.ai.chat.memory.ChatMemory;
++import org.springframework.stereotype.Service;
++
++@Service
++@RequiredArgsConstructor
++public class AiChatService {
++
++    private final ChatClient chatClient;
++
++    public String chat(String conversationId, String message) {
++        try {
++            return chatClient.prompt()
++                    .user(message)
++                    .advisors(a -> a.param(ChatMemory.CONVERSATION_ID, conversationId))
++                    .call()
++                    .content();
++        } catch (Exception e) {
++            return "Xin lỗi, trợ lý AI hiện không trả lời được. Bạn kiểm tra lại API key hoặc thử lại sau nhé.";
++        }
++    }
++}
+diff --git a/src/main/java/com/example/eshop/ai/EShopTools.java b/src/main/java/com/example/eshop/ai/EShopTools.java
+new file mode 100644
+index 0000000..8f74c74
+--- /dev/null
++++ b/src/main/java/com/example/eshop/ai/EShopTools.java
+@@ -0,0 +1,87 @@
++package com.example.eshop.ai;
++
++import com.example.eshop.entity.Order;
++import com.example.eshop.entity.Product;
++import com.example.eshop.repo.CategoryRepo;
++import com.example.eshop.repo.OrderRepo;
++import com.example.eshop.repo.ProductRepo;
++import lombok.RequiredArgsConstructor;
++import org.springframework.ai.tool.annotation.Tool;
++import org.springframework.ai.tool.annotation.ToolParam;
++import org.springframework.data.domain.PageRequest;
++import org.springframework.data.domain.Sort;
++import org.springframework.security.core.Authentication;
++import org.springframework.security.core.context.SecurityContextHolder;
++import org.springframework.stereotype.Component;
++
++import java.util.stream.Collectors;
++
++@Component
++@RequiredArgsConstructor
++public class EShopTools {
++
++    private final ProductRepo productRepo;
++    private final CategoryRepo categoryRepo;
++    private final OrderRepo orderRepo;
++
++    @Tool(description = "Tìm sản phẩm trong eShop theo tên, danh mục hoặc giá tối đa. Trả về id, tên, giá, tồn kho và link chi tiết.")
++    public String searchProducts(
++            @ToolParam(description = "Từ khóa tên sản phẩm, ví dụ: tai nghe, iPhone, chuột") String keyword,
++            @ToolParam(description = "Id danh mục, để trống nếu không lọc theo danh mục", required = false) Long categoryId,
++            @ToolParam(description = "Giá tối đa tính bằng VND, để trống nếu không lọc theo giá", required = false) Double maxPrice) {
++        var page = productRepo.search(keyword, categoryId,
++                PageRequest.of(0, 20, Sort.by("price").ascending()));
++        var list = page.getContent().stream()
++                .filter(p -> maxPrice == null || p.getPrice().doubleValue() <= maxPrice)
++                .limit(5)
++                .toList();
++        if (list.isEmpty()) return "Không tìm thấy sản phẩm nào phù hợp.";
++        return list.stream()
++                .map(p -> "id=" + p.getId() + " | " + p.getName()
++                        + " | " + p.getPrice() + "đ"
++                        + " | còn " + p.getQuantity() + " cái"
++                        + " | " + p.getCategory().getName()
++                        + " | /products/" + p.getId())
++                .collect(Collectors.joining("\n"));
++    }
++
++    @Tool(description = "Xem chi tiết 1 sản phẩm theo id, gồm mô tả, giá, tồn kho và danh mục.")
++    public String getProduct(
++            @ToolParam(description = "Id sản phẩm") Long id) {
++        Product p = productRepo.findById(id).orElse(null);
++        if (p == null) return "Không tìm thấy sản phẩm id = " + id + ".";
++        return "id=" + p.getId() + " | " + p.getName()
++                + " | " + p.getPrice() + "đ"
++                + " | còn " + p.getQuantity() + " cái"
++                + " | danh mục: " + p.getCategory().getName()
++                + " | mô tả: " + p.getDescription()
++                + " | /products/" + p.getId();
++    }
++
++    @Tool(description = "Tra cứu trạng thái 1 đơn hàng theo mã đơn. Chỉ trả về đơn của chính người đang đăng nhập.")
++    public String getOrderStatus(
++            @ToolParam(description = "Mã đơn hàng, ví dụ: 1") Long orderId) {
++        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
++        String username = auth == null ? null : auth.getName();
++        if (username == null || "anonymousUser".equals(username)) {
++            return "Bạn cần đăng nhập mới tra cứu được đơn hàng.";
++        }
++        Order o = orderRepo.findById(orderId).orElse(null);
++        if (o == null) return "Không tìm thấy đơn hàng #" + orderId + ".";
++        if (o.getUser() == null || !username.equals(o.getUser().getUsername())) {
++            return "Đơn hàng #" + orderId + " không thuộc tài khoản của bạn.";
++        }
++        return "Đơn #" + o.getId()
++                + " | trạng thái: " + o.getStatus()
++                + " | ngày đặt: " + o.getOrderDate()
++                + " | tổng tiền: " + o.getTotalAmount() + "đ"
++                + " | số món: " + o.getDetails().size();
++    }
++
++    @Tool(description = "Liệt kê tất cả danh mục sản phẩm trong eShop.")
++    public String listCategories() {
++        return categoryRepo.findAllByOrderByNameAsc().stream()
++                .map(c -> "id=" + c.getId() + " | " + c.getName())
++                .collect(Collectors.joining("\n"));
++    }
++}
+diff --git a/src/main/java/com/example/eshop/security/SecurityConfig.java b/src/main/java/com/example/eshop/security/SecurityConfig.java
+index 5a0d920..6232672 100644
+--- a/src/main/java/com/example/eshop/security/SecurityConfig.java
++++ b/src/main/java/com/example/eshop/security/SecurityConfig.java
+@@ -61,2 +61,3 @@ public class SecurityConfig {
+                         .requestMatchers("/api/auth/**").permitAll()
++                        .requestMatchers("/api/ai/chat").permitAll()
+                         .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
+diff --git a/src/main/resources/application.properties b/src/main/resources/application.properties
+index 5597207..321c887 100644
+--- a/src/main/resources/application.properties
++++ b/src/main/resources/application.properties
+@@ -26,2 +26,10 @@ app.jwt.expiration-ms=86400000
+ 
+-logging.level.org.springframework.security=DEBUG
+\ No newline at end of file
++logging.level.org.springframework.security=DEBUG
++
++# ===== Spring AI (OpenAI) =====
++# Chay bang bien moi truong, KHONG ghi key that vao file nay.
++#   export OPENAI_API_KEY="sk-..."
++spring.ai.openai.api-key=${OPENAI_API_KEY:}
++spring.ai.openai.chat.model=gpt-4o-mini
++spring.ai.openai.chat.temperature=0.7
++spring.ai.model.chat=openai
+diff --git a/src/main/resources/templates/fragments/layout.html b/src/main/resources/templates/fragments/layout.html
+index 183c0df..b4b34ed 100644
+--- a/src/main/resources/templates/fragments/layout.html
++++ b/src/main/resources/templates/fragments/layout.html
+@@ -90,2 +90,40 @@
+ 
++<div id="ai-chat" style="position:fixed;right:16px;bottom:16px;z-index:1050;">
++    <button class="btn btn-primary rounded-circle" style="width:56px;height:56px;"
++            onclick="document.getElementById('ai-panel').style.display='block'">💬</button>
++    <div id="ai-panel" style="display:none;width:340px;height:420px;background:#fff;border:1px solid #ddd;border-radius:12px;overflow:hidden;">
++        <div class="p-2 bg-primary text-white d-flex justify-content-between">
++            <span>Trợ lý eShop</span>
++            <button class="btn btn-sm btn-light" onclick="document.getElementById('ai-panel').style.display='none'">✕</button>
++        </div>
++        <div id="ai-messages" class="p-2" style="height:300px;overflow-y:auto;"></div>
++        <div class="d-flex p-2">
++            <input id="ai-input" class="form-control me-2" placeholder="Hỏi về sản phẩm, đơn hàng...">
++            <button class="btn btn-primary" onclick="sendAi()">Gửi</button>
++        </div>
++    </div>
++</div>
++<script>
++let aiConversationId = localStorage.getItem('aiConversationId');
++async function sendAi() {
++    const input = document.getElementById('ai-input');
++    const text = input.value.trim();
++    if (!text) return;
++    const box = document.getElementById('ai-messages');
++    box.innerHTML += '<div><b>Bạn:</b> ' + text + '</div>';
++    input.value = '';
++    const res = await fetch('/api/ai/chat', {
++        method: 'POST',
++        headers: {'Content-Type': 'application/json'},
++        body: JSON.stringify({message: text, conversationId: aiConversationId})
++    });
++    const data = await res.json();
++    aiConversationId = data.conversationId;
++    localStorage.setItem('aiConversationId', aiConversationId);
++    box.innerHTML += '<div><b>eShop:</b> ' + data.reply.replaceAll('\n', '<br>') + '</div>';
++    box.scrollTop = box.scrollHeight;
++}
++document.getElementById('ai-input')?.addEventListener('keydown', e => { if (e.key === 'Enter') sendAi(); });
++</script>
++
+ </body>

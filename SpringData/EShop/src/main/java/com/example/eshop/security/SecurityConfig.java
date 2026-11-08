@@ -59,6 +59,7 @@ public class SecurityConfig {
                 .anonymous(a -> a.authorities("ROLE_GUEST"))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers("/api/ai/chat").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
                         .requestMatchers("/api/orders/**").hasRole("CUSTOMER")
                         .anyRequest().hasRole("SELLER"))
