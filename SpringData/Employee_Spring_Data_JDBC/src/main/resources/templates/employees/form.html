@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Nhân viên</title></head>
+<body>
+<h1 th:text="${employeeForm.id == null} ? 'Thêm nhân viên' : 'Sửa nhân viên'"></h1>
+<form th:action="${employeeForm.id != null} ? @{/employees/{id}(id=${employeeForm.id})} : @{/employees}"
+      th:object="${employeeForm}" method="post">
+    Tên: <input type="text" th:field="*{name}"><span th:errors="*{name}"></span><br>
+    Role: <input type="text" th:field="*{role}"><br>
+    Tuổi: <input type="number" th:field="*{age}"><br>
+    Lương: <input type="number" th:field="*{salary}"><br>
+    Phòng: <select th:field="*{departmentId}">
+    <option th:each="d : ${departments}" th:value="${d.id}" th:text="${d.name}"></option>
+</select><br>
+    Chức vụ: <select th:field="*{positionId}">
+    <option th:each="p : ${positions}" th:value="${p.id}" th:text="${p.title}"></option>
+</select><br>
+    <button type="submit">Lưu</button>
+</form>
+<a th:href="@{/employees}">Hủy</a>
+</body>
+</html>

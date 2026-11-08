@@ -1,0 +1,158 @@
+body {
+    background: #f4f1ea;
+    color: #333;
+    margin: 0;
+}
+
+.store-wrap {
+    max-width: 980px;
+    margin: 16px auto 32px;
+    background: #fff;
+    border: 1px solid #d7d1c5;
+}
+
+.store-header {
+    display: flex;
+    align-items: stretch;
+    background: linear-gradient(#8d6a45, #6d4c32);
+    color: #fff;
+}
+
+.brand {
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: #f3efe6;
+    color: #6d4c32;
+    border-right: 4px solid #c4a574;
+}
+
+.store-nav {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 22px;
+    padding: 18px 28px;
+    background: linear-gradient(#4e3424, #3b271b);
+}
+
+.store-nav a {
+    color: #f5e6c8;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.store-body {
+    display: flex;
+    min-height: 520px;
+}
+
+.sidebar {
+    width: 350px;
+    padding: 16px 12px;
+    border-right: 1px solid #e4ded2;
+    background: #faf8f4;
+}
+
+.side-box {
+    border: 1px solid #ddd;
+    background: #fff;
+    margin-bottom: 16px;
+    font-size: 13px;
+}
+
+.side-box h6 {
+    margin: 0;
+    padding: 6px 8px;
+    background: #f3f3f3;
+    border-bottom: 1px solid #ddd;
+    font-size: 12px;
+}
+
+.side-box p, .side-box form, .side-box a.cart-link {
+    display: block;
+    margin: 8px;
+}
+
+.content {
+    flex: 1;
+    padding: 16px;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.book-card {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 8px;
+    font-size: 13px;
+    background: #fff;
+}
+
+.book-card img {
+    width: 120px;
+    height: 160px;
+    object-fit: cover;
+}
+
+.book-card h6 {
+    min-height: 38px;
+    font-size: 13px;
+}
+
+.detail {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.detail img {
+    width: 180px;
+    height: 240px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.cart-table th, .cart-table td {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+}
+
+.cart-table th {
+    background: #f7f7f7;
+    text-align: center;
+}
+
+.cart-actions {
+    margin-top: 12px;
+}
+
+.pay-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pay-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.pay-table .label {
+    width: 140px;
+    background: #fafafa;
+}

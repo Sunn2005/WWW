@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head><meta charset="UTF-8"><title>Tìm kiếm</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Tìm kiếm nhân viên</h1>
+<a th:href="@{/employees}">Về danh sách</a>
+<p th:if="${message}" th:text="${message}" style="color:red"></p>
+<form th:action="@{/employees/search}" th:object="${criteria}" method="get">
+    ID: <input type="number" th:field="*{id}"><br>
+    Tên: <input type="text" th:field="*{name}"><br>
+    Tuổi từ: <input type="number" th:field="*{minAge}"> đến: <input type="number" th:field="*{maxAge}"><br>
+    <span sec:authorize="hasAnyRole('USER','ADMIN')">Lương lớn hơn:
+        <input type="number" id="minSalary" name="minSalary" step="1"
+               th:value="${criteria.minSalary != null ? #numbers.formatDecimal(criteria.minSalary, 1, 'NONE', 0, 'POINT') : ''}"
+               placeholder="Ví dụ: 22000000"> ₫<br>
+    </span>
+    Chức vụ: <select th:field="*{positionId}">
+    <option value="">-- Tất cả --</option>
+    <option th:each="p : ${positions}" th:value="${p.id}" th:text="${p.title}"></option>
+</select><br>
+    <button type="submit">Tìm</button>
+</form>
+<table border="1" th:if="${employees}">
+    <tr><th>ID</th><th>Tên</th><th>Tuổi</th><th sec:authorize="hasAnyRole('USER','ADMIN')">Lương</th><th>Phòng</th><th>Chức vụ</th></tr>
+    <tr th:each="e : ${employees}">
+        <td th:text="${e.id}"></td><td th:text="${e.name}"></td><td th:text="${e.age}"></td>
+        <td sec:authorize="hasAnyRole('USER','ADMIN')"
+            th:text="${e.salary != null ? #numbers.formatDecimal(e.salary, 1, 'POINT', 0, 'COMMA') + ' ₫' : '—'}"></td>
+        <td th:text="${e.departmentName}"></td><td th:text="${e.positionTitle}"></td>
+    </tr>
+</table>
+</body>
+</html>

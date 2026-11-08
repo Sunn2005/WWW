@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Tìm kiếm</title></head>
+<body>
+<h1>Tìm kiếm nhân viên</h1>
+<a th:href="@{/employees}">Về danh sách</a>
+<form th:action="@{/employees/search}" th:object="${criteria}" method="get">
+    ID: <input type="number" th:field="*{id}"><br>
+    Tên: <input type="text" th:field="*{name}"><br>
+    Tuổi từ: <input type="number" th:field="*{minAge}"> đến: <input type="number" th:field="*{maxAge}"><br>
+    Lương lớn hơn: <input type="number" th:field="*{minSalary}"><br>
+    Chức vụ: <select th:field="*{positionId}">
+    <option value="">-- Tất cả --</option>
+    <option th:each="p : ${positions}" th:value="${p.id}" th:text="${p.title}"></option>
+</select><br>
+    <button type="submit">Tìm</button>
+</form>
+<table border="1" th:if="${employees}">
+    <tr><th>ID</th><th>Tên</th><th>Tuổi</th><th>Lương</th><th>Phòng</th><th>Chức vụ</th></tr>
+    <tr th:each="e : ${employees}">
+        <td th:text="${e.id}"></td><td th:text="${e.name}"></td><td th:text="${e.age}"></td>
+        <td th:text="${e.salary}"></td><td th:text="${e.departmentName}"></td><td th:text="${e.positionTitle}"></td>
+    </tr>
+</table>
+</body>
+</html>

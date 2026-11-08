@@ -1,0 +1,70 @@
+{
+  "info": {
+    "name": "Product CRUD API",
+    "description": "Các request cơ bản để test Product REST API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/demo_restapi-1.0-SNAPSHOT/api"
+    }
+  ],
+  "item": [
+    {
+      "name": "Get all products",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/products"
+      }
+    },
+    {
+      "name": "Get product by ID",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/products/1"
+      }
+    },
+    {
+      "name": "Create product",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Mechanical Keyboard\",\n  \"price\": 89.99\n}"
+        },
+        "url": "{{baseUrl}}/products"
+      }
+    },
+    {
+      "name": "Update product",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated Laptop\",\n  \"price\": 1999.99\n}"
+        },
+        "url": "{{baseUrl}}/products/1"
+      }
+    },
+    {
+      "name": "Delete product",
+      "request": {
+        "method": "DELETE",
+        "url": "{{baseUrl}}/products/1"
+      }
+    }
+  ]
+}

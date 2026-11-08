@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head><meta charset="UTF-8"><title>Danh sách nhân viên</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1>Danh sách nhân viên</h1>
+<div sec:authorize="isAuthenticated()">
+    Xin chào, <span sec:authentication="name"></span> |
+    <form th:action="@{/logout}" method="post" style="display:inline">
+        <button type="submit">Đăng xuất</button>
+    </form>
+</div>
+<p th:if="${message}" th:text="${message}"></p>
+<a sec:authorize="hasAnyRole('USER','ADMIN')" th:href="@{/employees/new}">Thêm nhân viên</a> |
+<a th:href="@{/employees/search}">Tìm kiếm</a> |
+<a th:href="@{/employees/stats}">Thống kê</a>
+<table border="1" width="80%">
+    <tr><th>ID</th><th>Tên</th><th>Role</th><th>Tuổi</th><th sec:authorize="hasAnyRole('USER','ADMIN')">Lương</th><th>Phòng</th><th>Chức vụ</th><th></th></tr>
+    <tr th:each="e : ${employees}">
+        <td th:text="${e.id}"></td>
+        <td><a th:href="@{/employees/{id}(id=${e.id})}" th:text="${e.name}"></a></td>
+        <td th:text="${e.role}"></td>
+        <td th:text="${e.age}"></td>
+        <td sec:authorize="hasAnyRole('USER','ADMIN')"
+            th:text="${e.salary != null ? #numbers.formatDecimal(e.salary, 1, 'POINT', 0, 'COMMA') + ' ₫' : '—'}"></td>
+        <td th:text="${e.departmentName}"></td>
+        <td th:text="${e.positionTitle}"></td>
+        <td><a sec:authorize="hasAnyRole('USER','ADMIN')" th:href="@{/employees/{id}/edit(id=${e.id})}">Sửa</a></td>
+    </tr>
+</table>
+</body>
+</html>

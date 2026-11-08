@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
+             version="3.2">
+    <persistence-unit name="default">
+<!--        <non-jta-data-source>java:comp/env/jdbc/employeedb</non-jta-data-source>-->
+
+        <class>fit.iuh.bai6_restapi.model.DanhMuc</class>
+        <class>fit.iuh.bai6_restapi.model.TinTuc</class>
+        <properties>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="12345678"/>
+            <property name="javax.persistence.jdbc.driver" value="org.mariadb.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:mariadb://localhost:3306/danhmucdb"/>
+
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MariaDBDialect"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>

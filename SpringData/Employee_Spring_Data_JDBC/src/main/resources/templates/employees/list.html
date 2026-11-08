@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Danh sách nhân viên</title></head>
+<body>
+<h1>Danh sách nhân viên</h1>
+<p th:if="${message}" th:text="${message}"></p>
+<a th:href="@{/employees/new}">Thêm nhân viên</a> |
+<a th:href="@{/employees/search}">Tìm kiếm</a> |
+<a th:href="@{/employees/stats}">Thống kê</a>
+<table border="1" width="80%">
+    <tr><th>ID</th><th>Tên</th><th>Role</th><th>Tuổi</th><th>Lương</th><th>Phòng</th><th>Chức vụ</th><th></th></tr>
+    <tr th:each="e : ${employees}">
+        <td th:text="${e.id}"></td>
+        <td><a th:href="@{/employees/{id}(id=${e.id})}" th:text="${e.name}"></a></td>
+        <td th:text="${e.role}"></td>
+        <td th:text="${e.age}"></td>
+        <td th:text="${e.salary}"></td>
+        <td th:text="${e.departmentName}"></td>
+        <td th:text="${e.positionTitle}"></td>
+        <td><a th:href="@{/employees/{id}/edit(id=${e.id})}">Sửa</a></td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head><meta charset="UTF-8"><title>Chi tiết</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<h1 th:text="${employee.name}"></h1>
+<p>ID: <span th:text="${employee.id}"></span></p>
+<p>Role: <span th:text="${employee.role}"></span></p>
+<p>Tuổi: <span th:text="${employee.age}"></span></p>
+<p sec:authorize="hasAnyRole('USER','ADMIN')">Lương:
+    <span th:text="${employee.salary != null ? #numbers.formatDecimal(employee.salary, 1, 'POINT', 0, 'COMMA') + ' ₫' : '—'}"></span>
+</p>
+<p>Phòng: <span th:text="${employee.departmentName}"></span></p>
+<p>Chức vụ: <span th:text="${employee.positionTitle}"></span></p>
+<a sec:authorize="hasAnyRole('USER','ADMIN')" th:href="@{/employees/{id}/edit(id=${employee.id})}">Sửa</a>
+<form sec:authorize="hasRole('ADMIN')" th:action="@{/employees/{id}/delete(id=${employee.id})}" method="post" style="display:inline">
+    <button type="submit">Xóa</button>
+</form>
+<br><a th:href="@{/employees}">Về danh sách</a>
+</body>
+</html>

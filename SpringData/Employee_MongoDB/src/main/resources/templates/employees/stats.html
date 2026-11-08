@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><title>Thống kê</title></head>
+<body>
+<h1>Thống kê theo phòng</h1>
+<a th:href="@{/employees}">Về danh sách</a>
+<table border="1">
+    <tr><th>Phòng</th><th>Số NV</th><th>Lương TB</th><th>Tổng lương</th></tr>
+    <tr th:each="s : ${stats}">
+        <td th:text="${s.departmentName}"></td><td th:text="${s.employeeCount}"></td>
+        <td th:text="${s.avgSalary}"></td><td th:text="${s.totalSalary}"></td>
+    </tr>
+</table>
+<h2>Phòng chưa có nhân viên</h2>
+<ul><li th:each="d : ${emptyDepartments}" th:text="${d.name}"></li></ul>
+<h2>Top N lương cao nhất</h2>
+<form th:action="@{/employees/top}" method="get">
+    Phòng: <select name="departmentId">
+    <option th:each="d : ${departments}" th:value="${d.id}" th:text="${d.name}"></option>
+</select>
+    N: <input type="number" name="n" value="5">
+    <button type="submit">Xem</button>
+</form>
+</body>
+</html>

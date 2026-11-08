@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/data/danhmucdb.sql" value="ae77e29d-a4db-48f8-b75d-7a49ae4c0fd7" />
+    <file url="file://$APPLICATION_CONFIG_DIR$/consoles/db/ae77e29d-a4db-48f8-b75d-7a49ae4c0fd7/console.sql" value="ae77e29d-a4db-48f8-b75d-7a49ae4c0fd7" />
+  </component>
+</project>

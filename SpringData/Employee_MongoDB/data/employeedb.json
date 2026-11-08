@@ -1,0 +1,1930 @@
+{
+  "departments": [
+    {
+      "_id": 1,
+      "name": "Công nghệ thông tin"
+    },
+    {
+      "_id": 2,
+      "name": "Nhân sự"
+    },
+    {
+      "_id": 3,
+      "name": "Kinh doanh"
+    },
+    {
+      "_id": 4,
+      "name": "Kế toán"
+    }
+  ],
+  "positions": [
+    {
+      "_id": 1,
+      "title": "Nhân viên"
+    },
+    {
+      "_id": 2,
+      "title": "Trưởng nhóm"
+    },
+    {
+      "_id": 3,
+      "title": "Trưởng phòng"
+    },
+    {
+      "_id": 4,
+      "title": "Thực tập sinh"
+    }
+  ],
+  "employees": [
+    {
+      "_id": 1,
+      "name": "Nguyễn Hoàng Linh",
+      "role": "Lập trình viên",
+      "age": 28,
+      "salary": 22000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 2,
+      "name": "Trần Phan Hòa Bình",
+      "role": "Lập trình viên",
+      "age": 31,
+      "salary": 26000000,
+      "departmentId": 1,
+      "positionId": 2
+    },
+    {
+      "_id": 3,
+      "name": "Lê Minh Cường",
+      "role": "Quản lý",
+      "age": 42,
+      "salary": 45000000,
+      "departmentId": 1,
+      "positionId": 3
+    },
+    {
+      "_id": 4,
+      "name": "Phạm Thu Dung",
+      "role": "Tuyển dụng",
+      "age": 27,
+      "salary": 15000000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 5,
+      "name": "Hoàng Văn Em",
+      "role": "Quản lý",
+      "age": 39,
+      "salary": 38000000,
+      "departmentId": 2,
+      "positionId": 3
+    },
+    {
+      "_id": 6,
+      "name": "Vũ Thị Phương",
+      "role": "Kinh doanh",
+      "age": 25,
+      "salary": 14000000,
+      "departmentId": 3,
+      "positionId": 4
+    },
+    {
+      "_id": 7,
+      "name": "Đặng Quốc Gia",
+      "role": "Kinh doanh",
+      "age": 30,
+      "salary": 20000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 8,
+      "name": "Bùi Thanh Hà",
+      "role": "Kinh doanh",
+      "age": 34,
+      "salary": 28000000,
+      "departmentId": 3,
+      "positionId": 2
+    },
+    {
+      "_id": 9,
+      "name": "Ngô Đức Huy",
+      "role": "Lập trình viên",
+      "age": 23,
+      "salary": 9000000,
+      "departmentId": 1,
+      "positionId": 4
+    },
+    {
+      "_id": 10,
+      "name": "Phạm Hoàng Vinh",
+      "role": "Lập trình viên",
+      "age": 23,
+      "salary": 10000000,
+      "departmentId": 1,
+      "positionId": 2
+    },
+    {
+      "_id": 13,
+      "name": "Nguyễn Đức Nga",
+      "role": "Kiểm thử phần mềm",
+      "age": 37,
+      "salary": 18000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 14,
+      "name": "Nguyễn Đức An",
+      "role": "DevOps",
+      "age": 38,
+      "salary": 15500000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 15,
+      "name": "Hồ Kim Hiếu",
+      "role": "Quản lý",
+      "age": 44,
+      "salary": 42000000,
+      "departmentId": 3,
+      "positionId": 3
+    },
+    {
+      "_id": 16,
+      "name": "Lê Thu Nhi",
+      "role": "Quản lý nhóm",
+      "age": 30,
+      "salary": 22000000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 17,
+      "name": "Dương Gia Thảo",
+      "role": "Kế toán",
+      "age": 36,
+      "salary": 19500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 18,
+      "name": "Huỳnh Hoài Vy",
+      "role": "Kế toán",
+      "age": 21,
+      "salary": 8000000,
+      "departmentId": 4,
+      "positionId": 4
+    },
+    {
+      "_id": 19,
+      "name": "Hoàng Văn Mai",
+      "role": "Kế toán",
+      "age": 34,
+      "salary": 23500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 20,
+      "name": "Hoàng Kim Huy",
+      "role": "Tuyển dụng",
+      "age": 24,
+      "salary": 24000000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 21,
+      "name": "Phan Bảo Tú",
+      "role": "Kiểm thử phần mềm",
+      "age": 26,
+      "salary": 18500000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 22,
+      "name": "Trần Hữu Vy",
+      "role": "Chăm sóc khách hàng",
+      "age": 21,
+      "salary": 7000000,
+      "departmentId": 3,
+      "positionId": 4
+    },
+    {
+      "_id": 23,
+      "name": "Trần Bảo Nga",
+      "role": "Kinh doanh",
+      "age": 25,
+      "salary": 16000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 24,
+      "name": "Ngô Ngọc Bình",
+      "role": "Chăm sóc khách hàng",
+      "age": 23,
+      "salary": 8500000,
+      "departmentId": 3,
+      "positionId": 4
+    },
+    {
+      "_id": 25,
+      "name": "Dương Đức Hải",
+      "role": "Kinh doanh",
+      "age": 26,
+      "salary": 22500000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 26,
+      "name": "Vũ Anh Bình",
+      "role": "Lập trình viên",
+      "age": 24,
+      "salary": 19000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 27,
+      "name": "Huỳnh Minh An",
+      "role": "Kế toán",
+      "age": 36,
+      "salary": 20500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 28,
+      "name": "Lý Ngọc Sơn",
+      "role": "DevOps",
+      "age": 22,
+      "salary": 8500000,
+      "departmentId": 1,
+      "positionId": 4
+    },
+    {
+      "_id": 29,
+      "name": "Phạm Đức Nam",
+      "role": "Phân tích nghiệp vụ",
+      "age": 21,
+      "salary": 7000000,
+      "departmentId": 1,
+      "positionId": 4
+    },
+    {
+      "_id": 30,
+      "name": "Võ Tuấn Yến",
+      "role": "Kinh doanh",
+      "age": 36,
+      "salary": 15000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 31,
+      "name": "Huỳnh Kim Vy",
+      "role": "Quản lý nhóm",
+      "age": 33,
+      "salary": 29500000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 32,
+      "name": "Phạm Quốc Tâm",
+      "role": "Quản lý nhóm",
+      "age": 31,
+      "salary": 23500000,
+      "departmentId": 3,
+      "positionId": 2
+    },
+    {
+      "_id": 33,
+      "name": "Đỗ Bảo Nga",
+      "role": "Hành chính nhân sự",
+      "age": 29,
+      "salary": 14500000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 34,
+      "name": "Nguyễn Thu Hùng",
+      "role": "Thủ quỹ",
+      "age": 28,
+      "salary": 25000000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 35,
+      "name": "Hồ Gia Việt",
+      "role": "Kinh doanh",
+      "age": 38,
+      "salary": 25000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 36,
+      "name": "Vũ Kim Thắng",
+      "role": "Quản lý nhóm",
+      "age": 38,
+      "salary": 29000000,
+      "departmentId": 2,
+      "positionId": 2
+    },
+    {
+      "_id": 37,
+      "name": "Lê Hoài Dung",
+      "role": "Chăm sóc khách hàng",
+      "age": 34,
+      "salary": 20000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 38,
+      "name": "Lê Quốc Quyên",
+      "role": "Quản lý nhóm",
+      "age": 29,
+      "salary": 23000000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 39,
+      "name": "Đặng Tuấn Vy",
+      "role": "Kiểm thử phần mềm",
+      "age": 21,
+      "salary": 5500000,
+      "departmentId": 1,
+      "positionId": 4
+    },
+    {
+      "_id": 40,
+      "name": "Lý Anh Nga",
+      "role": "Quản lý nhóm",
+      "age": 30,
+      "salary": 23500000,
+      "departmentId": 1,
+      "positionId": 2
+    },
+    {
+      "_id": 41,
+      "name": "Trần Thanh Dung",
+      "role": "Chăm sóc khách hàng",
+      "age": 24,
+      "salary": 5000000,
+      "departmentId": 3,
+      "positionId": 4
+    },
+    {
+      "_id": 42,
+      "name": "Phạm Đức Nhi",
+      "role": "Quản lý",
+      "age": 44,
+      "salary": 44000000,
+      "departmentId": 1,
+      "positionId": 3
+    },
+    {
+      "_id": 43,
+      "name": "Bùi Hoài Nga",
+      "role": "Quản lý",
+      "age": 47,
+      "salary": 55000000,
+      "departmentId": 4,
+      "positionId": 3
+    },
+    {
+      "_id": 44,
+      "name": "Phạm Thu Tâm",
+      "role": "Kinh doanh",
+      "age": 32,
+      "salary": 16500000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 45,
+      "name": "Võ Ngọc Quyên",
+      "role": "Tuyển dụng",
+      "age": 28,
+      "salary": 21500000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 46,
+      "name": "Lý Văn Phong",
+      "role": "Chăm sóc khách hàng",
+      "age": 25,
+      "salary": 14000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 47,
+      "name": "Dương Văn Thắng",
+      "role": "Hành chính nhân sự",
+      "age": 30,
+      "salary": 10000000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 48,
+      "name": "Đặng Ngọc Tú",
+      "role": "Marketing",
+      "age": 24,
+      "salary": 24000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 49,
+      "name": "Ngô Quốc Hải",
+      "role": "Quản lý nhóm",
+      "age": 35,
+      "salary": 29500000,
+      "departmentId": 1,
+      "positionId": 2
+    },
+    {
+      "_id": 50,
+      "name": "Trần Hữu Linh",
+      "role": "Thủ quỹ",
+      "age": 29,
+      "salary": 17500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 51,
+      "name": "Trần Tuấn Vy",
+      "role": "Thủ quỹ",
+      "age": 28,
+      "salary": 25000000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 52,
+      "name": "Võ Minh Vy",
+      "role": "Kế toán",
+      "age": 24,
+      "salary": 5000000,
+      "departmentId": 4,
+      "positionId": 4
+    },
+    {
+      "_id": 53,
+      "name": "Phạm Thanh Linh",
+      "role": "DevOps",
+      "age": 24,
+      "salary": 21000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 54,
+      "name": "Đỗ Thu Hiếu",
+      "role": "Chăm sóc khách hàng",
+      "age": 24,
+      "salary": 25000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 55,
+      "name": "Lý Minh Huy",
+      "role": "Phân tích nghiệp vụ",
+      "age": 31,
+      "salary": 21000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 56,
+      "name": "Hồ Kim Tú",
+      "role": "Lập trình viên",
+      "age": 28,
+      "salary": 15500000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 57,
+      "name": "Lý Hoài Phong",
+      "role": "Thủ quỹ",
+      "age": 22,
+      "salary": 6000000,
+      "departmentId": 4,
+      "positionId": 4
+    },
+    {
+      "_id": 58,
+      "name": "Hoàng Hữu Nhi",
+      "role": "Quản lý nhóm",
+      "age": 31,
+      "salary": 22000000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 59,
+      "name": "Phạm Minh Trung",
+      "role": "Kiểm toán nội bộ",
+      "age": 37,
+      "salary": 11500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 60,
+      "name": "Ngô Quốc Nga",
+      "role": "Chăm sóc khách hàng",
+      "age": 31,
+      "salary": 16000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 61,
+      "name": "Lê Mai Phúc",
+      "role": "Quản lý",
+      "age": 50,
+      "salary": 56500000,
+      "departmentId": 2,
+      "positionId": 3
+    },
+    {
+      "_id": 62,
+      "name": "Lý Ngọc Nhi",
+      "role": "Quản lý nhóm",
+      "age": 36,
+      "salary": 31500000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 63,
+      "name": "Nguyễn Đức Nga",
+      "role": "Kiểm thử phần mềm",
+      "age": 37,
+      "salary": 18000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 64,
+      "name": "Nguyễn Đức An",
+      "role": "DevOps",
+      "age": 38,
+      "salary": 15500000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 65,
+      "name": "Hồ Kim Hiếu",
+      "role": "Quản lý",
+      "age": 44,
+      "salary": 42000000,
+      "departmentId": 3,
+      "positionId": 3
+    },
+    {
+      "_id": 66,
+      "name": "Lê Thu Nhi",
+      "role": "Quản lý nhóm",
+      "age": 30,
+      "salary": 22000000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 67,
+      "name": "Dương Gia Thảo",
+      "role": "Kế toán",
+      "age": 36,
+      "salary": 19500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 68,
+      "name": "Huỳnh Hoài Vy",
+      "role": "Kế toán",
+      "age": 21,
+      "salary": 8000000,
+      "departmentId": 4,
+      "positionId": 4
+    },
+    {
+      "_id": 69,
+      "name": "Hoàng Văn Mai",
+      "role": "Kế toán",
+      "age": 34,
+      "salary": 23500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 70,
+      "name": "Hoàng Kim Huy",
+      "role": "Tuyển dụng",
+      "age": 24,
+      "salary": 24000000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 71,
+      "name": "Phan Bảo Tú",
+      "role": "Kiểm thử phần mềm",
+      "age": 26,
+      "salary": 18500000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 72,
+      "name": "Trần Hữu Vy",
+      "role": "Chăm sóc khách hàng",
+      "age": 21,
+      "salary": 7000000,
+      "departmentId": 3,
+      "positionId": 4
+    },
+    {
+      "_id": 73,
+      "name": "Trần Bảo Nga",
+      "role": "Kinh doanh",
+      "age": 25,
+      "salary": 16000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 74,
+      "name": "Ngô Ngọc Bình",
+      "role": "Chăm sóc khách hàng",
+      "age": 23,
+      "salary": 8500000,
+      "departmentId": 3,
+      "positionId": 4
+    },
+    {
+      "_id": 75,
+      "name": "Dương Đức Hải",
+      "role": "Kinh doanh",
+      "age": 26,
+      "salary": 22500000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 76,
+      "name": "Vũ Anh Bình",
+      "role": "Lập trình viên",
+      "age": 24,
+      "salary": 19000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 77,
+      "name": "Huỳnh Minh An",
+      "role": "Kế toán",
+      "age": 36,
+      "salary": 20500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 78,
+      "name": "Lý Ngọc Sơn",
+      "role": "DevOps",
+      "age": 22,
+      "salary": 8500000,
+      "departmentId": 1,
+      "positionId": 4
+    },
+    {
+      "_id": 79,
+      "name": "Phạm Đức Nam",
+      "role": "Phân tích nghiệp vụ",
+      "age": 21,
+      "salary": 7000000,
+      "departmentId": 1,
+      "positionId": 4
+    },
+    {
+      "_id": 80,
+      "name": "Võ Tuấn Yến",
+      "role": "Kinh doanh",
+      "age": 36,
+      "salary": 15000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 81,
+      "name": "Huỳnh Kim Vy",
+      "role": "Quản lý nhóm",
+      "age": 33,
+      "salary": 29500000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 82,
+      "name": "Phạm Quốc Tâm",
+      "role": "Quản lý nhóm",
+      "age": 31,
+      "salary": 23500000,
+      "departmentId": 3,
+      "positionId": 2
+    },
+    {
+      "_id": 83,
+      "name": "Đỗ Bảo Nga",
+      "role": "Hành chính nhân sự",
+      "age": 29,
+      "salary": 14500000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 84,
+      "name": "Nguyễn Thu Hùng",
+      "role": "Thủ quỹ",
+      "age": 28,
+      "salary": 25000000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 85,
+      "name": "Hồ Gia Việt",
+      "role": "Kinh doanh",
+      "age": 38,
+      "salary": 25000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 86,
+      "name": "Vũ Kim Thắng",
+      "role": "Quản lý nhóm",
+      "age": 38,
+      "salary": 29000000,
+      "departmentId": 2,
+      "positionId": 2
+    },
+    {
+      "_id": 87,
+      "name": "Lê Hoài Dung",
+      "role": "Chăm sóc khách hàng",
+      "age": 34,
+      "salary": 20000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 88,
+      "name": "Lê Quốc Quyên",
+      "role": "Quản lý nhóm",
+      "age": 29,
+      "salary": 23000000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 89,
+      "name": "Đặng Tuấn Vy",
+      "role": "Kiểm thử phần mềm",
+      "age": 21,
+      "salary": 5500000,
+      "departmentId": 1,
+      "positionId": 4
+    },
+    {
+      "_id": 90,
+      "name": "Lý Anh Nga",
+      "role": "Quản lý nhóm",
+      "age": 30,
+      "salary": 23500000,
+      "departmentId": 1,
+      "positionId": 2
+    },
+    {
+      "_id": 91,
+      "name": "Trần Thanh Dung",
+      "role": "Chăm sóc khách hàng",
+      "age": 24,
+      "salary": 5000000,
+      "departmentId": 3,
+      "positionId": 4
+    },
+    {
+      "_id": 92,
+      "name": "Phạm Đức Nhi",
+      "role": "Quản lý",
+      "age": 44,
+      "salary": 44000000,
+      "departmentId": 1,
+      "positionId": 3
+    },
+    {
+      "_id": 93,
+      "name": "Bùi Hoài Nga",
+      "role": "Quản lý",
+      "age": 47,
+      "salary": 55000000,
+      "departmentId": 4,
+      "positionId": 3
+    },
+    {
+      "_id": 94,
+      "name": "Phạm Thu Tâm",
+      "role": "Kinh doanh",
+      "age": 32,
+      "salary": 16500000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 95,
+      "name": "Võ Ngọc Quyên",
+      "role": "Tuyển dụng",
+      "age": 28,
+      "salary": 21500000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 96,
+      "name": "Lý Văn Phong",
+      "role": "Chăm sóc khách hàng",
+      "age": 25,
+      "salary": 14000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 97,
+      "name": "Dương Văn Thắng",
+      "role": "Hành chính nhân sự",
+      "age": 30,
+      "salary": 10000000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 98,
+      "name": "Đặng Ngọc Tú",
+      "role": "Marketing",
+      "age": 24,
+      "salary": 24000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 99,
+      "name": "Ngô Quốc Hải",
+      "role": "Quản lý nhóm",
+      "age": 35,
+      "salary": 29500000,
+      "departmentId": 1,
+      "positionId": 2
+    },
+    {
+      "_id": 100,
+      "name": "Trần Hữu Linh",
+      "role": "Thủ quỹ",
+      "age": 29,
+      "salary": 17500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 101,
+      "name": "Trần Tuấn Vy",
+      "role": "Thủ quỹ",
+      "age": 28,
+      "salary": 25000000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 102,
+      "name": "Võ Minh Vy",
+      "role": "Kế toán",
+      "age": 24,
+      "salary": 5000000,
+      "departmentId": 4,
+      "positionId": 4
+    },
+    {
+      "_id": 103,
+      "name": "Phạm Thanh Linh",
+      "role": "DevOps",
+      "age": 24,
+      "salary": 21000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 104,
+      "name": "Đỗ Thu Hiếu",
+      "role": "Chăm sóc khách hàng",
+      "age": 24,
+      "salary": 25000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 105,
+      "name": "Lý Minh Huy",
+      "role": "Phân tích nghiệp vụ",
+      "age": 31,
+      "salary": 21000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 106,
+      "name": "Hồ Kim Tú",
+      "role": "Lập trình viên",
+      "age": 28,
+      "salary": 15500000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 107,
+      "name": "Lý Hoài Phong",
+      "role": "Thủ quỹ",
+      "age": 22,
+      "salary": 6000000,
+      "departmentId": 4,
+      "positionId": 4
+    },
+    {
+      "_id": 108,
+      "name": "Hoàng Hữu Nhi",
+      "role": "Quản lý nhóm",
+      "age": 31,
+      "salary": 22000000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 109,
+      "name": "Phạm Minh Trung",
+      "role": "Kiểm toán nội bộ",
+      "age": 37,
+      "salary": 11500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 110,
+      "name": "Ngô Quốc Nga",
+      "role": "Chăm sóc khách hàng",
+      "age": 31,
+      "salary": 16000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 111,
+      "name": "Lê Mai Phúc",
+      "role": "Quản lý",
+      "age": 50,
+      "salary": 56500000,
+      "departmentId": 2,
+      "positionId": 3
+    },
+    {
+      "_id": 112,
+      "name": "Lý Ngọc Nhi",
+      "role": "Quản lý nhóm",
+      "age": 36,
+      "salary": 31500000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 113,
+      "name": "Nguyễn Đức Nga",
+      "role": "Kiểm thử phần mềm",
+      "age": 37,
+      "salary": 18000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 114,
+      "name": "Nguyễn Đức An",
+      "role": "DevOps",
+      "age": 38,
+      "salary": 15500000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 115,
+      "name": "Hồ Kim Hiếu",
+      "role": "Quản lý",
+      "age": 44,
+      "salary": 42000000,
+      "departmentId": 3,
+      "positionId": 3
+    },
+    {
+      "_id": 116,
+      "name": "Lê Thu Nhi",
+      "role": "Quản lý nhóm",
+      "age": 30,
+      "salary": 22000000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 117,
+      "name": "Dương Gia Thảo",
+      "role": "Kế toán",
+      "age": 36,
+      "salary": 19500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 118,
+      "name": "Huỳnh Hoài Vy",
+      "role": "Kế toán",
+      "age": 21,
+      "salary": 8000000,
+      "departmentId": 4,
+      "positionId": 4
+    },
+    {
+      "_id": 119,
+      "name": "Hoàng Văn Mai",
+      "role": "Kế toán",
+      "age": 34,
+      "salary": 23500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 120,
+      "name": "Hoàng Kim Huy",
+      "role": "Tuyển dụng",
+      "age": 24,
+      "salary": 24000000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 121,
+      "name": "Phan Bảo Tú",
+      "role": "Kiểm thử phần mềm",
+      "age": 26,
+      "salary": 18500000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 122,
+      "name": "Trần Hữu Vy",
+      "role": "Chăm sóc khách hàng",
+      "age": 21,
+      "salary": 7000000,
+      "departmentId": 3,
+      "positionId": 4
+    },
+    {
+      "_id": 123,
+      "name": "Trần Bảo Nga",
+      "role": "Kinh doanh",
+      "age": 25,
+      "salary": 16000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 124,
+      "name": "Ngô Ngọc Bình",
+      "role": "Chăm sóc khách hàng",
+      "age": 23,
+      "salary": 8500000,
+      "departmentId": 3,
+      "positionId": 4
+    },
+    {
+      "_id": 125,
+      "name": "Dương Đức Hải",
+      "role": "Kinh doanh",
+      "age": 26,
+      "salary": 22500000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 126,
+      "name": "Vũ Anh Bình",
+      "role": "Lập trình viên",
+      "age": 24,
+      "salary": 19000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 127,
+      "name": "Huỳnh Minh An",
+      "role": "Kế toán",
+      "age": 36,
+      "salary": 20500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 128,
+      "name": "Lý Ngọc Sơn",
+      "role": "DevOps",
+      "age": 22,
+      "salary": 8500000,
+      "departmentId": 1,
+      "positionId": 4
+    },
+    {
+      "_id": 129,
+      "name": "Phạm Đức Nam",
+      "role": "Phân tích nghiệp vụ",
+      "age": 21,
+      "salary": 7000000,
+      "departmentId": 1,
+      "positionId": 4
+    },
+    {
+      "_id": 130,
+      "name": "Võ Tuấn Yến",
+      "role": "Kinh doanh",
+      "age": 36,
+      "salary": 15000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 131,
+      "name": "Huỳnh Kim Vy",
+      "role": "Quản lý nhóm",
+      "age": 33,
+      "salary": 29500000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 132,
+      "name": "Phạm Quốc Tâm",
+      "role": "Quản lý nhóm",
+      "age": 31,
+      "salary": 23500000,
+      "departmentId": 3,
+      "positionId": 2
+    },
+    {
+      "_id": 133,
+      "name": "Đỗ Bảo Nga",
+      "role": "Hành chính nhân sự",
+      "age": 29,
+      "salary": 14500000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 134,
+      "name": "Nguyễn Thu Hùng",
+      "role": "Thủ quỹ",
+      "age": 28,
+      "salary": 25000000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 135,
+      "name": "Hồ Gia Việt",
+      "role": "Kinh doanh",
+      "age": 38,
+      "salary": 25000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 136,
+      "name": "Vũ Kim Thắng",
+      "role": "Quản lý nhóm",
+      "age": 38,
+      "salary": 29000000,
+      "departmentId": 2,
+      "positionId": 2
+    },
+    {
+      "_id": 137,
+      "name": "Lê Hoài Dung",
+      "role": "Chăm sóc khách hàng",
+      "age": 34,
+      "salary": 20000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 138,
+      "name": "Lê Quốc Quyên",
+      "role": "Quản lý nhóm",
+      "age": 29,
+      "salary": 23000000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 139,
+      "name": "Đặng Tuấn Vy",
+      "role": "Kiểm thử phần mềm",
+      "age": 21,
+      "salary": 5500000,
+      "departmentId": 1,
+      "positionId": 4
+    },
+    {
+      "_id": 140,
+      "name": "Lý Anh Nga",
+      "role": "Quản lý nhóm",
+      "age": 30,
+      "salary": 23500000,
+      "departmentId": 1,
+      "positionId": 2
+    },
+    {
+      "_id": 141,
+      "name": "Trần Thanh Dung",
+      "role": "Chăm sóc khách hàng",
+      "age": 24,
+      "salary": 5000000,
+      "departmentId": 3,
+      "positionId": 4
+    },
+    {
+      "_id": 142,
+      "name": "Phạm Đức Nhi",
+      "role": "Quản lý",
+      "age": 44,
+      "salary": 44000000,
+      "departmentId": 1,
+      "positionId": 3
+    },
+    {
+      "_id": 143,
+      "name": "Bùi Hoài Nga",
+      "role": "Quản lý",
+      "age": 47,
+      "salary": 55000000,
+      "departmentId": 4,
+      "positionId": 3
+    },
+    {
+      "_id": 144,
+      "name": "Phạm Thu Tâm",
+      "role": "Kinh doanh",
+      "age": 32,
+      "salary": 16500000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 145,
+      "name": "Võ Ngọc Quyên",
+      "role": "Tuyển dụng",
+      "age": 28,
+      "salary": 21500000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 146,
+      "name": "Lý Văn Phong",
+      "role": "Chăm sóc khách hàng",
+      "age": 25,
+      "salary": 14000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 147,
+      "name": "Dương Văn Thắng",
+      "role": "Hành chính nhân sự",
+      "age": 30,
+      "salary": 10000000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 148,
+      "name": "Đặng Ngọc Tú",
+      "role": "Marketing",
+      "age": 24,
+      "salary": 24000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 149,
+      "name": "Ngô Quốc Hải",
+      "role": "Quản lý nhóm",
+      "age": 35,
+      "salary": 29500000,
+      "departmentId": 1,
+      "positionId": 2
+    },
+    {
+      "_id": 150,
+      "name": "Trần Hữu Linh",
+      "role": "Thủ quỹ",
+      "age": 29,
+      "salary": 17500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 151,
+      "name": "Trần Tuấn Vy",
+      "role": "Thủ quỹ",
+      "age": 28,
+      "salary": 25000000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 152,
+      "name": "Võ Minh Vy",
+      "role": "Kế toán",
+      "age": 24,
+      "salary": 5000000,
+      "departmentId": 4,
+      "positionId": 4
+    },
+    {
+      "_id": 153,
+      "name": "Phạm Thanh Linh",
+      "role": "DevOps",
+      "age": 24,
+      "salary": 21000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 154,
+      "name": "Đỗ Thu Hiếu",
+      "role": "Chăm sóc khách hàng",
+      "age": 24,
+      "salary": 25000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 155,
+      "name": "Lý Minh Huy",
+      "role": "Phân tích nghiệp vụ",
+      "age": 31,
+      "salary": 21000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 156,
+      "name": "Hồ Kim Tú",
+      "role": "Lập trình viên",
+      "age": 28,
+      "salary": 15500000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 157,
+      "name": "Lý Hoài Phong",
+      "role": "Thủ quỹ",
+      "age": 22,
+      "salary": 6000000,
+      "departmentId": 4,
+      "positionId": 4
+    },
+    {
+      "_id": 158,
+      "name": "Hoàng Hữu Nhi",
+      "role": "Quản lý nhóm",
+      "age": 31,
+      "salary": 22000000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 159,
+      "name": "Phạm Minh Trung",
+      "role": "Kiểm toán nội bộ",
+      "age": 37,
+      "salary": 11500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 160,
+      "name": "Ngô Quốc Nga",
+      "role": "Chăm sóc khách hàng",
+      "age": 31,
+      "salary": 16000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 161,
+      "name": "Lê Mai Phúc",
+      "role": "Quản lý",
+      "age": 50,
+      "salary": 56500000,
+      "departmentId": 2,
+      "positionId": 3
+    },
+    {
+      "_id": 162,
+      "name": "Lý Ngọc Nhi",
+      "role": "Quản lý nhóm",
+      "age": 36,
+      "salary": 31500000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 163,
+      "name": "Nguyễn Đức Nga",
+      "role": "Kiểm thử phần mềm",
+      "age": 37,
+      "salary": 18000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 164,
+      "name": "Nguyễn Đức An",
+      "role": "DevOps",
+      "age": 38,
+      "salary": 15500000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 165,
+      "name": "Hồ Kim Hiếu",
+      "role": "Quản lý",
+      "age": 44,
+      "salary": 42000000,
+      "departmentId": 3,
+      "positionId": 3
+    },
+    {
+      "_id": 166,
+      "name": "Lê Thu Nhi",
+      "role": "Quản lý nhóm",
+      "age": 30,
+      "salary": 22000000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 167,
+      "name": "Dương Gia Thảo",
+      "role": "Kế toán",
+      "age": 36,
+      "salary": 19500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 168,
+      "name": "Huỳnh Hoài Vy",
+      "role": "Kế toán",
+      "age": 21,
+      "salary": 8000000,
+      "departmentId": 4,
+      "positionId": 4
+    },
+    {
+      "_id": 169,
+      "name": "Hoàng Văn Mai",
+      "role": "Kế toán",
+      "age": 34,
+      "salary": 23500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 170,
+      "name": "Hoàng Kim Huy",
+      "role": "Tuyển dụng",
+      "age": 24,
+      "salary": 24000000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 171,
+      "name": "Phan Bảo Tú",
+      "role": "Kiểm thử phần mềm",
+      "age": 26,
+      "salary": 18500000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 172,
+      "name": "Trần Hữu Vy",
+      "role": "Chăm sóc khách hàng",
+      "age": 21,
+      "salary": 7000000,
+      "departmentId": 3,
+      "positionId": 4
+    },
+    {
+      "_id": 173,
+      "name": "Trần Bảo Nga",
+      "role": "Kinh doanh",
+      "age": 25,
+      "salary": 16000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 174,
+      "name": "Ngô Ngọc Bình",
+      "role": "Chăm sóc khách hàng",
+      "age": 23,
+      "salary": 8500000,
+      "departmentId": 3,
+      "positionId": 4
+    },
+    {
+      "_id": 175,
+      "name": "Dương Đức Hải",
+      "role": "Kinh doanh",
+      "age": 26,
+      "salary": 22500000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 176,
+      "name": "Vũ Anh Bình",
+      "role": "Lập trình viên",
+      "age": 24,
+      "salary": 19000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 177,
+      "name": "Huỳnh Minh An",
+      "role": "Kế toán",
+      "age": 36,
+      "salary": 20500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 178,
+      "name": "Lý Ngọc Sơn",
+      "role": "DevOps",
+      "age": 22,
+      "salary": 8500000,
+      "departmentId": 1,
+      "positionId": 4
+    },
+    {
+      "_id": 179,
+      "name": "Phạm Đức Nam",
+      "role": "Phân tích nghiệp vụ",
+      "age": 21,
+      "salary": 7000000,
+      "departmentId": 1,
+      "positionId": 4
+    },
+    {
+      "_id": 180,
+      "name": "Võ Tuấn Yến",
+      "role": "Kinh doanh",
+      "age": 36,
+      "salary": 15000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 181,
+      "name": "Huỳnh Kim Vy",
+      "role": "Quản lý nhóm",
+      "age": 33,
+      "salary": 29500000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 182,
+      "name": "Phạm Quốc Tâm",
+      "role": "Quản lý nhóm",
+      "age": 31,
+      "salary": 23500000,
+      "departmentId": 3,
+      "positionId": 2
+    },
+    {
+      "_id": 183,
+      "name": "Đỗ Bảo Nga",
+      "role": "Hành chính nhân sự",
+      "age": 29,
+      "salary": 14500000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 184,
+      "name": "Nguyễn Thu Hùng",
+      "role": "Thủ quỹ",
+      "age": 28,
+      "salary": 25000000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 185,
+      "name": "Hồ Gia Việt",
+      "role": "Kinh doanh",
+      "age": 38,
+      "salary": 25000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 186,
+      "name": "Vũ Kim Thắng",
+      "role": "Quản lý nhóm",
+      "age": 38,
+      "salary": 29000000,
+      "departmentId": 2,
+      "positionId": 2
+    },
+    {
+      "_id": 187,
+      "name": "Lê Hoài Dung",
+      "role": "Chăm sóc khách hàng",
+      "age": 34,
+      "salary": 20000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 188,
+      "name": "Lê Quốc Quyên",
+      "role": "Quản lý nhóm",
+      "age": 29,
+      "salary": 23000000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 189,
+      "name": "Đặng Tuấn Vy",
+      "role": "Kiểm thử phần mềm",
+      "age": 21,
+      "salary": 5500000,
+      "departmentId": 1,
+      "positionId": 4
+    },
+    {
+      "_id": 190,
+      "name": "Lý Anh Nga",
+      "role": "Quản lý nhóm",
+      "age": 30,
+      "salary": 23500000,
+      "departmentId": 1,
+      "positionId": 2
+    },
+    {
+      "_id": 191,
+      "name": "Trần Thanh Dung",
+      "role": "Chăm sóc khách hàng",
+      "age": 24,
+      "salary": 5000000,
+      "departmentId": 3,
+      "positionId": 4
+    },
+    {
+      "_id": 192,
+      "name": "Phạm Đức Nhi",
+      "role": "Quản lý",
+      "age": 44,
+      "salary": 44000000,
+      "departmentId": 1,
+      "positionId": 3
+    },
+    {
+      "_id": 193,
+      "name": "Bùi Hoài Nga",
+      "role": "Quản lý",
+      "age": 47,
+      "salary": 55000000,
+      "departmentId": 4,
+      "positionId": 3
+    },
+    {
+      "_id": 194,
+      "name": "Phạm Thu Tâm",
+      "role": "Kinh doanh",
+      "age": 32,
+      "salary": 16500000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 195,
+      "name": "Võ Ngọc Quyên",
+      "role": "Tuyển dụng",
+      "age": 28,
+      "salary": 21500000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 196,
+      "name": "Lý Văn Phong",
+      "role": "Chăm sóc khách hàng",
+      "age": 25,
+      "salary": 14000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 197,
+      "name": "Dương Văn Thắng",
+      "role": "Hành chính nhân sự",
+      "age": 30,
+      "salary": 10000000,
+      "departmentId": 2,
+      "positionId": 1
+    },
+    {
+      "_id": 198,
+      "name": "Đặng Ngọc Tú",
+      "role": "Marketing",
+      "age": 24,
+      "salary": 24000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 199,
+      "name": "Ngô Quốc Hải",
+      "role": "Quản lý nhóm",
+      "age": 35,
+      "salary": 29500000,
+      "departmentId": 1,
+      "positionId": 2
+    },
+    {
+      "_id": 200,
+      "name": "Trần Hữu Linh",
+      "role": "Thủ quỹ",
+      "age": 29,
+      "salary": 17500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 201,
+      "name": "Trần Tuấn Vy",
+      "role": "Thủ quỹ",
+      "age": 28,
+      "salary": 25000000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 202,
+      "name": "Võ Minh Vy",
+      "role": "Kế toán",
+      "age": 24,
+      "salary": 5000000,
+      "departmentId": 4,
+      "positionId": 4
+    },
+    {
+      "_id": 203,
+      "name": "Phạm Thanh Linh",
+      "role": "DevOps",
+      "age": 24,
+      "salary": 21000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 204,
+      "name": "Đỗ Thu Hiếu",
+      "role": "Chăm sóc khách hàng",
+      "age": 24,
+      "salary": 25000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 205,
+      "name": "Lý Minh Huy",
+      "role": "Phân tích nghiệp vụ",
+      "age": 31,
+      "salary": 21000000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 206,
+      "name": "Hồ Kim Tú",
+      "role": "Lập trình viên",
+      "age": 28,
+      "salary": 15500000,
+      "departmentId": 1,
+      "positionId": 1
+    },
+    {
+      "_id": 207,
+      "name": "Lý Hoài Phong",
+      "role": "Thủ quỹ",
+      "age": 22,
+      "salary": 6000000,
+      "departmentId": 4,
+      "positionId": 4
+    },
+    {
+      "_id": 208,
+      "name": "Hoàng Hữu Nhi",
+      "role": "Quản lý nhóm",
+      "age": 31,
+      "salary": 22000000,
+      "departmentId": 4,
+      "positionId": 2
+    },
+    {
+      "_id": 209,
+      "name": "Phạm Minh Trung",
+      "role": "Kiểm toán nội bộ",
+      "age": 37,
+      "salary": 11500000,
+      "departmentId": 4,
+      "positionId": 1
+    },
+    {
+      "_id": 210,
+      "name": "Ngô Quốc Nga",
+      "role": "Chăm sóc khách hàng",
+      "age": 31,
+      "salary": 16000000,
+      "departmentId": 3,
+      "positionId": 1
+    },
+    {
+      "_id": 211,
+      "name": "Lê Mai Phúc",
+      "role": "Quản lý",
+      "age": 50,
+      "salary": 56500000,
+      "departmentId": 2,
+      "positionId": 3
+    },
+    {
+      "_id": 212,
+      "name": "Lý Ngọc Nhi",
+      "role": "Quản lý nhóm",
+      "age": 36,
+      "salary": 31500000,
+      "departmentId": 4,
+      "positionId": 2
+    }
+  ]
+}
